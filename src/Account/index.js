@@ -26,15 +26,17 @@ class Account extends Component {
     e.preventDefault();
     let newBalance = 0;
     const amount = parseInt(this.inputBox.value);
+    
     if(amount > this.state.balance) {
       alert("Your number is not valid");
     } else{
       newBalance = this.state.balance - amount;
+      this.setState ({
+        balance: newBalance
+      })
     }
     
-    this.setState ({
-      balance: newBalance
-    })
+    
     this.inputBox.value = '';
   }
 
